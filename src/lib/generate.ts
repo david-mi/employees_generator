@@ -1,8 +1,8 @@
 import { getRandomElementFromArray } from "./utils.js";
-import { names, departments, states } from "./data/index.js";
+import { names, departments, states, streets, cities, zipCodes } from "./data/index.js";
 
 interface Employee {
-  [key: string]: string
+  [key: string]: string | number
 }
 
 function generateEmployees(amount: number = 1): Employee[] {
@@ -12,18 +12,27 @@ function generateEmployees(amount: number = 1): Employee[] {
   let lastName = ""
   let department = ""
   let state = ""
+  let street = ""
+  let city = ""
+  let zipCode = 0
 
   while (count < amount) {
     firstName = getRandomElementFromArray(names, firstName)
     lastName = getRandomElementFromArray(names, lastName)
     department = getRandomElementFromArray(departments, department)
     state = getRandomElementFromArray(states, state)
+    street = getRandomElementFromArray(streets, street)
+    city = getRandomElementFromArray(cities, city)
+    zipCode = getRandomElementFromArray(zipCodes, zipCode)
 
     employees.push({
       firstName,
       lastName,
       department,
-      state
+      street,
+      city,
+      state,
+      zipCode
     })
 
     count++

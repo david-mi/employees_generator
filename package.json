@@ -1,0 +1,21 @@
+{
+  "name": "employees_generator",
+  "version": "1.0.0",
+  "description": "A simple package to generate random users",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "watch": "tsc --watch",
+    "dev": "node  --watch ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-mi/employees_generator.git"
+  },
+  "author": "david-mi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-mi/employees_generator/issues"
+  },
+  "homepage": "https://github.com/david-mi/employees_generator#readme"
+}

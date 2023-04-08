@@ -1,1 +1,1 @@
-export { generate } from "./main.js"
+export { default } from "./generate.js"

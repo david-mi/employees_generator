@@ -1,1 +1,1 @@
-export { default as names } from "./names.js"
+export { names } from "./names.js"

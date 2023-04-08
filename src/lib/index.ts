@@ -1,1 +1,1 @@
-console.log("init")
+export { generate } from "./main.js"

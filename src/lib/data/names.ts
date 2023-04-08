@@ -1,4 +1,4 @@
-const names = [
+export const names = [
   "Maria",
   "Nushi",
   "Mohammed",
@@ -1000,5 +1000,3 @@ const names = [
   "Rustam",
   "Ester"
 ]
-
-export default names

@@ -21,3 +21,13 @@ export function getRandomElementFromArray<T extends string | number>(array: T[],
 function getRandomArrayIndex(array: any[]): number {
   return Math.floor(Math.random() * array.length)
 }
+
+/**
+ * Check if the given parameter is an Object
+ * 
+ * @param obj element to check
+ */
+
+export function isObject(arg: any): boolean {
+  return typeof arg !== "number" && arg.constructor.name === "Object"
+}

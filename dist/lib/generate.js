@@ -1,5 +1,5 @@
 import { getRandomElementFromArray as generateEmployee, isObject } from "./utils.js";
-import { names, departments, states, streets, cities, zipCodes } from "./data/index.js";
+import { names, departments, states, streets, cities, zipCodes, dates } from "./data/index.js";
 /**
  * Generate a list of employees
  *
@@ -14,7 +14,9 @@ import { names, departments, states, streets, cities, zipCodes } from "./data/in
  * {
  *   firstname: string
  *   lastName: string,
+ *   startDate: string,
  *   department: string,
+ *   birthDate: string,
  *   state: string,
  *   street: string,
  *   RANDOM_CITY: string,
@@ -27,12 +29,15 @@ function generateEmployees({ amount = 0, keyNames, map }) {
     }
     const employees = [];
     let count = 0;
-    let firstName, lastName, department, state, street, city, zipCode;
+    let firstName, lastName, startDate, department, birthDate, state, street, city, zipCode;
     while (++count < amount) {
+        [birthDate, startDate] = generateEmployee(dates, startDate).split("#");
         employees.push({
             [keyNames.firstName || "firstName"]: generateEmployee(names, firstName),
             [keyNames.lastName || "lastName"]: generateEmployee(names, lastName),
+            [keyNames.startDate || "startDate"]: startDate,
             [keyNames.department || "department"]: generateEmployee(departments, department),
+            [keyNames.birthDate || "birthDate"]: birthDate,
             [keyNames.state || "state"]: generateEmployee(states, state),
             [keyNames.street || "street"]: generateEmployee(streets, street),
             [keyNames.city || "city"]: generateEmployee(cities, city),

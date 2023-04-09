@@ -17,7 +17,7 @@ function getRandomArrayIndex(array) {
  * @param obj element to check
  */
 export function isObject(arg) {
-    return typeof arg !== "number" && arg.constructor.name === "Object";
+    return arg?.constructor === Object;
 }
 /**
  * @param min min number

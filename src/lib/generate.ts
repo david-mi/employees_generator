@@ -19,7 +19,7 @@ type KeyNames = {
 
 interface Options {
   amount: number
-  keyNames: KeyNames,
+  keyNames?: KeyNames,
   map?: (employee: Employee) => any
 }
 
@@ -48,7 +48,7 @@ interface Options {
  */
 
 
-function generateEmployees({ amount = 0, keyNames, map }: Options): Employee[] | null {
+function generateEmployees({ amount = 1, keyNames = {}, map }: Options): Employee[] | null {
   if (checkArgs({ amount, keyNames, map }) === false) {
     return null
   }
@@ -56,7 +56,7 @@ function generateEmployees({ amount = 0, keyNames, map }: Options): Employee[] |
   const employees: Employee[] = []
   let count = 0;
 
-  while (++count < amount) {
+  while (count++ < amount) {
     const [birthDate, startDate] = generateEmployee(dates).split("#")
 
     employees.push({
@@ -107,7 +107,7 @@ function checkArgs({ amount, keyNames, map }: Options) {
       }
     }
 
-    if (typeof map !== "function") {
+    if (map !== undefined && typeof map !== "function") {
       throw new Error("expected map to be a function")
     }
 

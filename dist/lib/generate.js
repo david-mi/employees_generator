@@ -23,13 +23,13 @@ import { names, departments, states, streets, cities, zipCodes, dates } from "./
  *   zipCode: number
  * }
  */
-function generateEmployees({ amount = 0, keyNames, map }) {
+function generateEmployees({ amount = 1, keyNames = {}, map }) {
     if (checkArgs({ amount, keyNames, map }) === false) {
         return null;
     }
     const employees = [];
     let count = 0;
-    while (++count < amount) {
+    while (count++ < amount) {
         const [birthDate, startDate] = generateEmployee(dates).split("#");
         employees.push({
             [keyNames.firstName || "firstName"]: generateEmployee(names),
@@ -72,7 +72,7 @@ function checkArgs({ amount, keyNames, map }) {
                 throw new Error(`property ${key} doesnt exist on type "KeyNames"`);
             }
         }
-        if (typeof map !== "function") {
+        if (map !== undefined && typeof map !== "function") {
             throw new Error("expected map to be a function");
         }
     }

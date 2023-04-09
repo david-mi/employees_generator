@@ -22,7 +22,7 @@ function getRandomArrayIndex(array: any[]): number {
  */
 
 export function isObject(arg: any): boolean {
-  return typeof arg !== "number" && arg.constructor.name === "Object"
+  return arg?.constructor === Object
 }
 
 /**

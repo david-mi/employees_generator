@@ -14,7 +14,7 @@ type KeyNames = {
 };
 interface Options {
     amount: number;
-    keyNames: KeyNames;
+    keyNames?: KeyNames;
     map?: (employee: Employee) => any;
 }
 /**

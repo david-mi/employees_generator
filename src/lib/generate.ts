@@ -2,10 +2,6 @@ import { getRandomElementFromArray as generateEmployee, isObject } from "./utils
 import { names, departments, states, streets, cities, zipCodes, dates } from "./data/index.js";
 
 interface Employee {
-  [key: string]: string | number
-}
-
-type KeyNames = {
   firstName?: string
   lastName?: string,
   startDate?: string,
@@ -14,12 +10,12 @@ type KeyNames = {
   state?: string,
   street?: string,
   city?: string,
-  zipCode?: string
+  zipCode?: number
 }
 
 interface Options {
   amount: number
-  keyNames?: KeyNames,
+  keyNames?: Employee,
   map?: (employee: Employee) => any
 }
 
@@ -72,7 +68,7 @@ function generateEmployees({ amount = 1, keyNames = {}, map }: Options): Employe
     })
   }
 
-  return map
+  return map !== undefined
     ? employees.map(map)
     : employees
 }

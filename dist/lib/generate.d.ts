@@ -1,7 +1,4 @@
 interface Employee {
-    [key: string]: string | number;
-}
-type KeyNames = {
     firstName?: string;
     lastName?: string;
     startDate?: string;
@@ -10,11 +7,11 @@ type KeyNames = {
     state?: string;
     street?: string;
     city?: string;
-    zipCode?: string;
-};
+    zipCode?: number;
+}
 interface Options {
     amount: number;
-    keyNames?: KeyNames;
+    keyNames?: Employee;
     map?: (employee: Employee) => any;
 }
 /**

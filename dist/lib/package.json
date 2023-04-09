@@ -1,13 +1,9 @@
 {
   "name": "employees-generator",
-  "version": "1.0.0",
-  "description": "A simple package to generate random users",
+  "version": "1.0.4",
+  "description": "A simple random employees generator",
   "main": "index.ts",
   "type": "module",
-  "scripts": {
-    "watch": "tsc --watch",
-    "dev": "node  --watch ./dist/app.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/david-mi/employees_generator.git"

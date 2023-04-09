@@ -43,7 +43,7 @@ function generateEmployees({ amount = 1, keyNames = {}, map }) {
             [keyNames.zipCode || "zipCode"]: generateEmployee(zipCodes)
         });
     }
-    return map
+    return map !== undefined
         ? employees.map(map)
         : employees;
 }

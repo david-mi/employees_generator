@@ -1,17 +1,10 @@
 /**
  * @param array array of strings or numbers
  * @returns random element from an array.
- * - If element is the same as the previous one, generate a new index
  */
 
-export function getRandomElementFromArray<T extends string | number>(array: T[], previousElement?: T): T {
-  let randomElement = array[getRandomArrayIndex(array)]
-
-  while (randomElement === previousElement) {
-    randomElement = getRandomElementFromArray(array, previousElement)
-  }
-
-  return randomElement
+export function getRandomElementFromArray<T extends string | number>(array: T[]): T {
+  return array[getRandomArrayIndex(array)]
 }
 
 /**

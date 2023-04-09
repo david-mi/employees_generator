@@ -29,19 +29,18 @@ function generateEmployees({ amount = 0, keyNames, map }) {
     }
     const employees = [];
     let count = 0;
-    let firstName, lastName, startDate, department, birthDate, state, street, city, zipCode;
     while (++count < amount) {
-        [birthDate, startDate] = generateEmployee(dates, startDate).split("#");
+        const [birthDate, startDate] = generateEmployee(dates).split("#");
         employees.push({
-            [keyNames.firstName || "firstName"]: generateEmployee(names, firstName),
-            [keyNames.lastName || "lastName"]: generateEmployee(names, lastName),
+            [keyNames.firstName || "firstName"]: generateEmployee(names),
+            [keyNames.lastName || "lastName"]: generateEmployee(names),
             [keyNames.startDate || "startDate"]: startDate,
-            [keyNames.department || "department"]: generateEmployee(departments, department),
+            [keyNames.department || "department"]: generateEmployee(departments),
             [keyNames.birthDate || "birthDate"]: birthDate,
-            [keyNames.state || "state"]: generateEmployee(states, state),
-            [keyNames.street || "street"]: generateEmployee(streets, street),
-            [keyNames.city || "city"]: generateEmployee(cities, city),
-            [keyNames.zipCode || "zipCode"]: generateEmployee(zipCodes, zipCode)
+            [keyNames.state || "state"]: generateEmployee(states),
+            [keyNames.street || "street"]: generateEmployee(streets),
+            [keyNames.city || "city"]: generateEmployee(cities),
+            [keyNames.zipCode || "zipCode"]: generateEmployee(zipCodes)
         });
     }
     return map

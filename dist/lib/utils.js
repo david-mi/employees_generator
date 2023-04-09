@@ -1,14 +1,9 @@
 /**
  * @param array array of strings or numbers
  * @returns random element from an array.
- * - If element is the same as the previous one, generate a new index
  */
-export function getRandomElementFromArray(array, previousElement) {
-    let randomElement = array[getRandomArrayIndex(array)];
-    while (randomElement === previousElement) {
-        randomElement = getRandomElementFromArray(array, previousElement);
-    }
-    return randomElement;
+export function getRandomElementFromArray(array) {
+    return array[getRandomArrayIndex(array)];
 }
 /**
  * @returns a random index from an array

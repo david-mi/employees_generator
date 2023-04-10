@@ -1,6 +1,6 @@
 {
   "name": "employees-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple random employees generator",
   "main": "index.ts",
   "type": "module",

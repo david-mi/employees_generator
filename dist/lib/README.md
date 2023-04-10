@@ -1,4 +1,4 @@
-# Employees Generator v1.0.6
+# Employees Generator v1.0.7
 
 ## Description
 
@@ -48,7 +48,7 @@ const employees = generateEmployees();
   state?: string,
   street?: string,
   city?: string,
-  zipCode?: string
+  zipCode?: number
   }
   /* Optional map callback for employees array */
   map?: (employee: Employee) => any

@@ -44,7 +44,7 @@ interface Options {
  */
 
 
-function generateEmployees({ amount = 1, keyNames = {}, map }: Options): Employee[] {
+function generateEmployees<T>({ amount = 1, keyNames = {}, map }: Options): T[] {
   checkArgs({ amount, keyNames, map })
 
   const employees: Employee[] = []

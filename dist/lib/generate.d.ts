@@ -37,5 +37,5 @@ interface Options {
  *   zipCode: number
  * }
  */
-declare function generateEmployees({ amount, keyNames, map }: Options): Employee[];
+declare function generateEmployees<T>({ amount, keyNames, map }: Options): T[];
 export default generateEmployees;

@@ -37,5 +37,5 @@ interface Options {
  *   zipCode: number
  * }
  */
-declare function generateEmployees({ amount, keyNames, map }: Options): Employee[] | null;
+declare function generateEmployees({ amount, keyNames, map }: Options): Employee[];
 export default generateEmployees;

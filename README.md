@@ -1,4 +1,4 @@
-# Employees Generator v1.0.8
+# Employees Generator v1.0.9
 
 ## Description
 
@@ -66,8 +66,8 @@ const employees = generateEmployees({
     zipCode: "zip"
   },
   map: (employee) => {
-    const isLucky = Math.round(Math.random()) === 1;
-    return { ...employee, isLucky };
+    const randomNumber = Math.round(Math.random());
+    return { ...employee, randomNumber };
   }
 });
 
@@ -84,7 +84,7 @@ const employees = generateEmployees({
     street: 'Country Club Dr',
     city: 'Irvine',
     zip: 94066,
-    isLucky: true
+    randomNumber: 0
   },
   {
     USERNAME: 'Qing',
@@ -96,7 +96,7 @@ const employees = generateEmployees({
     street: 'Tremont St',
     city: 'Tulsa',
     zip: 44256,
-    isLucky: false
+    randomNumber: 1
   }
 ]
 ```

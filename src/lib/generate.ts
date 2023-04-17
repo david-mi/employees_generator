@@ -87,7 +87,9 @@ function checkArgs({ amount, keyNames, map }: Options) {
   const defaultKeys = [
     "firstName",
     "lastName",
+    "startDate",
     "department",
+    "birthDate",
     "state",
     "street",
     "city",
